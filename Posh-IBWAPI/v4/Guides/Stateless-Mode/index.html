@@ -567,9 +567,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Stateless Mode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Stateless Mode
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-environment-variables" class="md-nav__link">
+    Supported Environment Variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -663,6 +693,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-environment-variables" class="md-nav__link">
+    Supported Environment Variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -679,7 +724,58 @@
                 
                 
                 <h1 id="stateless-mode">Stateless Mode<a class="headerlink" href="#stateless-mode" title="Permanent link">&para;</a></h1>
-<p>TBD</p>
+<p>Particularly in cloud environments, being able to use the module without needing to run an explicit configuration command like <code>Set-IBConfig</code> can be very useful. Posh-IBWAPI 4.0 now allows you to do that by specifying configuring the properties of a typical connection profile as environment variables. If the module is imported and sees these environment variables, they will override any local config file that may exist.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The environment variable based profile will also override any SecretManagement related environment variables which are also new in 4.0</p>
+</div>
+<h2 id="supported-environment-variables">Supported Environment Variables<a class="headerlink" href="#supported-environment-variables" title="Permanent link">&para;</a></h2>
+<p>The rules for these values mimic the rules for the equivalent parameters in <code>Set-IBConfig</code> except the Credential is split out into separate username and password values.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBWAPI_HOST</td>
+<td>gm.example.com</td>
+<td>(Required) This can be an FQDN or IP address</td>
+</tr>
+<tr>
+<td>IBWAPI_VERSION</td>
+<td>2.12.1</td>
+<td>(Required) A valid WAPI version string</td>
+</tr>
+<tr>
+<td>IBWAPI_USERNAME</td>
+<td>admin</td>
+<td>(Required) The account username</td>
+</tr>
+<tr>
+<td>IBWAPI_PASSWORD</td>
+<td>infoblox</td>
+<td>(Required) The plaintext password</td>
+</tr>
+<tr>
+<td>IBWAPI_SKIPCERTCHECK</td>
+<td>False</td>
+<td>(Optional) False if not defined, empty, or equal to 'False', 'No', or '0'</td>
+</tr>
+</tbody>
+</table>
+<p>The values are read during module import. So if you set them after the module is already loaded or need to change the values, you will need to force re-load the module for them to take effect.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Import-Module</span> <span class="n">Posh-IBWAPI</span> <span class="n">-Force</span>
+</code></pre></div>
+<p>You'll know it's working if you run <code>Get-IBConfig</code> and see a profile called <code>ENV</code> with your details similar to this:</p>
+<div class="highlight"><pre><span></span><code><span class="go">ProfileName WAPIHost       WAPIVersion CredentialUser SkipCertificateCheck</span>
+<span class="go">----------- --------       ----------- -------------- --------------------</span>
+<span class="go">ENV         gm.example.com 2.12.1      admin          False</span>
+</code></pre></div>
+<p>Also a warning will be thrown if you attempt to use <code>Set-IBConfig</code> or <code>Remove-IBConfig</code> while an environment variable based profile is active.</p>
                 
                   
                 
