@@ -13,14 +13,14 @@
         <meta name="author" content="Ryan Bolger">
       
       
-        <link rel="canonical" href="https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-Get-IBSchema/">
+        <link rel="canonical" href="https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-SecretManagement/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
-        <title>Using Get-IBSchema - Posh-IBWAPI</title>
+        <title>Using SecretManagement - Posh-IBWAPI</title>
       
     
     
@@ -54,16 +54,16 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Posh-IBWAPI - Using Get-IBSchema" />
+  <meta property="og:title" content="Posh-IBWAPI - Using SecretManagement" />
   <meta property="og:description" content="Documentation for the Posh-IBWAPI PowerShell module" />
-  <meta property="og:url" content="https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-Get-IBSchema/" />
+  <meta property="og:url" content="https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-SecretManagement/" />
   <meta property="og:image" content="https://docs.dvolve.net/Posh-IBWAPI/v4/assets/images/social-card.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Posh-IBWAPI - Using Get-IBSchema" />
+  <meta name="twitter:title" content="Posh-IBWAPI - Using SecretManagement" />
   <meta name="twitter:description" content="Documentation for the Posh-IBWAPI PowerShell module" />
   <meta name="twitter:image" content="https://docs.dvolve.net/Posh-IBWAPI/v4/assets/images/social-card.png" />
 
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-get-ibschema" class="md-skip">
+        <a href="#using-secretmanagement" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using Get-IBSchema
+              Using SecretManagement
             
           </span>
         </div>
@@ -568,72 +568,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Using Get-IBSchema
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Using-Get-IBSchema/" class="md-nav__link">
         Using Get-IBSchema
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-basics" class="md-nav__link">
-    The Basics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filtering-results" class="md-nav__link">
-    Filtering Results
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-view" class="md-nav__link">
-    Detailed View
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raw-output-and-html-fallback" class="md-nav__link">
-    Raw Output and HTML Fallback
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -653,11 +592,125 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Using-SecretManagement/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using SecretManagement
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Using SecretManagement
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-password" class="md-nav__link">
+    Vault Password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-names-and-customization" class="md-nav__link">
+    Secret Names and Customization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-vault" class="md-nav__link">
+    Using a Vault
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-vault-profile-storage" class="md-nav__link">
+    Enable Vault Profile Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-vault-key-storage" class="md-nav__link">
+    Disable Vault Key Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-considerations" class="md-nav__link">
+    Additional Considerations
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-keyvault" class="md-nav__link">
+    Azure KeyVault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-configs-and-vaults" class="md-nav__link">
+    Sharing Configs and Vaults
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -733,30 +786,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-basics" class="md-nav__link">
-    The Basics
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-password" class="md-nav__link">
+    Vault Password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-names-and-customization" class="md-nav__link">
+    Secret Names and Customization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#filtering-results" class="md-nav__link">
-    Filtering Results
+  <a href="#using-a-vault" class="md-nav__link">
+    Using a Vault
   </a>
+  
+    <nav class="md-nav" aria-label="Using a Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-vault-profile-storage" class="md-nav__link">
+    Enable Vault Profile Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-vault-key-storage" class="md-nav__link">
+    Disable Vault Key Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-view" class="md-nav__link">
-    Detailed View
+  <a href="#additional-considerations" class="md-nav__link">
+    Additional Considerations
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-keyvault" class="md-nav__link">
+    Azure KeyVault
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#raw-output-and-html-fallback" class="md-nav__link">
-    Raw Output and HTML Fallback
+        
+          <li class="md-nav__item">
+  <a href="#sharing-configs-and-vaults" class="md-nav__link">
+    Sharing Configs and Vaults
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -772,341 +878,53 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rmbolger/Posh-IBWAPI/edit/main/docs/Guides/Using-Get-IBSchema.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/rmbolger/Posh-IBWAPI/edit/main/docs/Guides/Using-SecretManagement.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="using-get-ibschema">Using Get-IBSchema<a class="headerlink" href="#using-get-ibschema" title="Permanent link">&para;</a></h1>
-<p>In WAPI 1.7.5 (NIOS 6.12), Infoblox added a <code>_schema</code> option to GET queries that will ignore most of the normal options and return a JSON view of the object model for the object type specified. This was presumably so that one could programmatically discover the WAPI object model without necessarily needing to look at the full HTML or PDF documentation. In WAPI 2.0 (NIOS 6.12.later and 7.0), they expanded on the schema querying functionality by adding more metadata to the object model and a <code>_get_doc</code> option that returned human readable text descriptions. It feels like they're trying to slowly move towards feature parity with the full HTML/PDF documentation which will be awesome if/when they get there.</p>
-<p>The goal of <code>Get-IBSchema</code> is to provide a <code>Get-Help</code> style view of the WAPI object model so that you don't necessarily have to continually reference the full documentation as you are developing your code. Some of the WAPI objects have fairly large object models and the full output can be pretty dense and long. So there are a lot of parameters that can help filter the output to only what you want to see.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Most of the examples below will be queried from a WAPI 2.0+ appliance. They should work the same way against 1.7.5, but there might be less data returned.</p>
+                <h1 id="using-secretmanagement">Using SecretManagement<a class="headerlink" href="#using-secretmanagement" title="Permanent link">&para;</a></h1>
+<p>Prior to Posh-IBWAPI 4.0, saved connection profiles were stored in JSON config file on the local filesystem. That is still the default in 4.0, but you may now alternatively utilize the Microsoft <a href="https://devblogs.microsoft.com/powershell/secretmanagement-and-secretstore-are-generally-available/">SecretManagement</a> module to store connection profiles in a variety of local, on-prem, and cloud secret stores using supported <a href="https://www.powershellgallery.com/packages?q=Tags%3A%22SecretManagement%22">vault extensions</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some vault extensions are read-only and don't allow for creation of new secrets. While it is technically possible to use these extensions with Posh-IBWAPI by pre-creating the necessary secrets, it is not recommended. Calls to <code>Set-IBConfig</code> and <code>Remove-IBConfig</code> will fail and likely leave the module in an inconsistent state.</p>
 </div>
-<h2 id="the-basics">The Basics<a class="headerlink" href="#the-basics" title="Permanent link">&para;</a></h2>
-<p><code>Get-IBSchema</code> uses the same common connection settings as other *-IBObject queries including values saved with <code>Set-IBConfig</code>. It's important to note that the WAPI will return a view of the schema that is filtered for the WAPI version you request. So if your WAPI version is 2.x and your requested version is 1.5, you'll get the schema that existed in WAPI 1.5. This is cool because you can do schema queries for WAPI versions that didn't originally support schema queries.</p>
-<p>Calling <code>Get-IBSchema</code> with no parameters or only a <code>-WAPIVersion</code> will return the base schema which includes the list of supported versions and the list of supported objects. For example:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema -version 1.5
-
-Requested Version: 1.5
-
-Supported Versions:
-
-1.0                          1.5                          1.7.5                        2.3
-1.1                          1.6                          2.0                          2.3.1
-1.2                          1.6.1                        2.1                          2.4
-1.2.1                        1.7                          2.1.1                        2.5
-1.3                          1.7.1                        2.1.2                        2.6
-1.4                          1.7.2                        2.2                          2.6.1
-1.4.1                        1.7.3                        2.2.1                        2.7
-1.4.2                        1.7.4                        2.2.2
-
-Supported Objects:
-
-allrecords                   ipv6networkcontainer         record:cname                 sharedrecord:a
-csvimporttask                ipv6range                    record:host                  sharedrecord:aaaa
-discovery:device             ipv6sharednetwork            record:host_ipv4addr         sharedrecord:mx
-discovery:deviceinterface    lease                        record:host_ipv6addr         sharedrecord:srv
-discovery:deviceneighbor     macfilteraddress             record:mx                    sharedrecord:txt
-discovery:status             member                       record:naptr                 snmpuser
-fileop                       namedacl                     record:ptr                   view
-fixedaddress                 network                      record:srv                   zone_auth
-grid                         networkcontainer             record:txt                   zone_delegated
-grid:dhcpproperties          networkview                  restartservicestatus         zone_forward
-ipv4address                  permission                   roaminghost                  zone_stub
-ipv6address                  range                        scheduledtask
-ipv6fixedaddress             record:a                     search
-ipv6network                  record:aaaa                  sharednetwork
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>In order to use the SecretManagement feature, you must install both the <a href="https://www.powershellgallery.com/packages/Microsoft.PowerShell.SecretManagement/">Microsoft.PowerShell.SecretManagement</a> module and an appropriate vault extension module to interface with your preferred secret store.</p>
+<p>You will also need to register a new vault and make note of the vault name. It will be provided to Posh-IBWAPI using the <code>IBWAPI_VAULT_NAME</code> environment variable.</p>
+<h3 id="vault-password">Vault Password<a class="headerlink" href="#vault-password" title="Permanent link">&para;</a></h3>
+<p>Some vaults can be configured with a password such that retrieving a secret requires first unlocking the vault with the password. In order to use a vault with Posh-IBWAPI, you have three options.</p>
+<ul>
+<li>Configure the vault so a password is not required.</li>
+<li>Provide the vault password using the <code>IBWAPI_VAULT_PASS</code> environment variable.</li>
+<li>Prior to importing the module, unlock or pre-authenticate to the vault so Posh-IBWAPI can make calls like <code>Set-Secret</code> and <code>Get-Secret</code> without error.</li>
+</ul>
+<h3 id="secret-names-and-customization">Secret Names and Customization<a class="headerlink" href="#secret-names-and-customization" title="Permanent link">&para;</a></h3>
+<p>Each connection profile will be stored as its own secret in the vault using the following default naming convention:</p>
+<blockquote>
+<p><code>poshibwapi-{0}</code></p>
+</blockquote>
+<p>The <code>{0}</code> is replaced with the profile name passed to <code>Set-IBConfig</code>.</p>
+<p>You may optionally create an environment variable called <code>IBWAPI_VAULT_SECRET_TEMPLATE</code> to override the default template. The new value should include <code>{0}</code> somewhere in the string, but will be appended to the end if it does not exist.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be aware that some vaults have restrictions on the characters allowed in a secret name. In particular, Azure KeyVault is very restrictive and only allows letters, numbers, and the <code>-</code> character.</p>
+</div>
+<h2 id="using-a-vault">Using a Vault<a class="headerlink" href="#using-a-vault" title="Permanent link">&para;</a></h2>
+<h3 id="enable-vault-profile-storage">Enable Vault Profile Storage<a class="headerlink" href="#enable-vault-profile-storage" title="Permanent link">&para;</a></h3>
+<p>To enable vault profile storage, make sure the environment variables are set properly based on the prerequisites listed above before importing the module. If you set them after the module is already loaded or need to change the values, you will need to force re-load the module for them to take effect.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Import-Module</span> <span class="n">Posh-IBWAPI</span> <span class="n">-Force</span>
 </code></pre></div>
-<p>To get the specifics for a particular object, add it with the <code>-ObjectType</code> parameter. The "RESTRICTIONS" section are the operations not supported by this object. Some objects may also have a "CLOUD RESTRICTIONS" section that has the operations not supported when querying via a cloud appliance.</p>
-<p>Without any additional parameters, the fields are displayed in a table format similar to the "Fields List" section from the full docs. The TYPE column shows the data type of that field and whether it is an array or not indicated by <code>[]</code> after the type name. The SUPPORTS column indicates what operations are allowed for each field <em>(R = Read/Get, W = Write/Create, U = Update/Modify, D = Delete, S = Search)</em>. The BASE column indicates whether the field is returned by default as part of the base object. The SEARCH column indicates what types of searches are allowed against that field <em>(case-insensitive, regex, greater than, etc)</em>. If the object has functions associated with it, those are displayed in a separate section below the fields table.</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FIELD                              TYPE                         SUPPORTS BASE SEARCH
------                              ----                         -------- ---- ------
-active_position                    string                       R
-additional_ip_list                 interface[]                  RWU
-bgp_as                             bgpas[]                      RWU
-comment                            string                       RWU S         :=~
-config_addr_type                   enum                         RWU S    X    =
-dns_resolver_setting               setting:dnsresolver          RWU
-dscp                               uint                         RWU
-email_setting                      setting:email                RWU
-enable_ha                          bool                         RWU S         =
-enable_lom                         bool                         RWU
-enable_member_redirect             bool                         RWU
-enable_ro_api_access               bool                         RWU S         =
-extattrs                           extattr                      RWU
-external_syslog_backup_servers     extsyslogbackupserver[]      RWU
-external_syslog_server_enable      bool                         RWU
-host_name                          string                       RWU S    X    :=~
-ipv4_address                       string                           S         =
-ipv6_address                       string                           S         =
-ipv6_setting                       ipv6setting                  RWU
-ipv6_static_routes                 ipv6setting[]                RWU
-is_dscp_capable                    bool                         R
-lan2_enabled                       bool                         RWU
-lan2_port_setting                  lan2portsetting              RWU
-lcd_input                          bool                         RWU
-lom_network_config                 lomnetworkconfig[]           RWU
-lom_users                          lomuser[]                    RWU
-master_candidate                   bool                         RWU S         =
-member_service_communication       memberservicecommunication[] RWU
-mgmt_port_setting                  mgmtportsetting              RWU
-mmdb_ea_build_time                 timestamp                    R
-mmdb_geoip_build_time              timestamp                    R
-nat_setting                        natsetting                   RWU
-node_info                          nodeinfo[]                   RWU
-ntp_setting                        member:ntp                   RWU
-ospf_list                          ospf[]                       RWU
-passive_ha_arp_enabled             bool                         RWU
-platform                           enum                         RWU S    X    =
-pre_provisioning                   preprovision                 RWU
-preserve_if_owns_delegation        bool                         RWU S         =
-remote_console_access_enable       bool                         RWU
-router_id                          uint                         RWU S         =
-service_status                     memberservicestatus[]        R
-service_type_configuration         enum                         RWU S    X    =
-snmp_setting                       setting:snmp                 RWU
-static_routes                      setting:network[]            RWU
-support_access_enable              bool                         RWU
-support_access_info                string                       R
-syslog_proxy_setting               setting:syslogproxy          RWU
-syslog_servers                     syslogserver[]               RWU
-syslog_size                        uint                         RWU
-threshold_traps                    thresholdtrap[]              RWU
-time_zone                          string                       RWU
-trap_notifications                 trapnotification[]           RWU
-upgrade_group                      string                       RWU
-use_dns_resolver_setting           bool                         RWU
-use_dscp                           bool                         RWU
-use_email_setting                  bool                         RWU
-use_enable_lom                     bool                         RWU
-use_enable_member_redirect         bool                         RWU
-use_external_syslog_backup_servers bool                         RWU
-use_lcd_input                      bool                         RWU
-use_remote_console_access_enable   bool                         RWU
-use_snmp_setting                   bool                         RWU
-use_support_access_enable          bool                         RWU
-use_syslog_proxy_setting           bool                         RWU
-use_threshold_traps                bool                         RWU
-use_time_zone                      bool                         RWU
-use_trap_notifications             bool                         RWU
-use_v4_vrrp                        bool                         RWU
-vip_setting                        setting:network              RWU
-vpn_mtu                            uint                         RWU
-
-FUNCTIONS
-    capture_traffic_control(action, interface, seconds_to_run)
-    capture_traffic_status() =&gt; status, file_exists, file_size
-    create_token() =&gt; pnode_tokens
-    member_admin_operation(operation)
-    read_token() =&gt; pnode_tokens
-    requestrestartservicestatus(service_option)
-    restartservices(restart_option, service_option)
-</code></pre></div>
-<h2 id="filtering-results">Filtering Results<a class="headerlink" href="#filtering-results" title="Permanent link">&para;</a></h2>
-<p>The full output of some objects can be pretty long and while you could just pipe the output to <code>more</code> to get a paged view, you can also use <code>-Fields</code>, <code>-NoFields</code>, <code>-Operations</code>, <code>-Functions</code>, and <code>-NoFunctions</code> to limit the output.</p>
-<p><code>-Fields</code> takes a string array (optionally with wildcards) and filters the field list to only those fields that match at least one of the strings. So if you wanted to filter IP and NAT related fields on the <code>member</code> example above, you could do this:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Fields ip*,nat*
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FIELD              TYPE          SUPPORTS BASE SEARCH
------              ----          -------- ---- ------
-ipv4_address       string            S         =
-ipv6_address       string            S         =
-ipv6_setting       ipv6setting   RWU
-ipv6_static_routes ipv6setting[] RWU
-nat_setting        natsetting    RWU
-
-FUNCTIONS
-    capture_traffic_control(action, interface, seconds_to_run)
-    capture_traffic_status() =&gt; status, file_exists, file_size
-    create_token() =&gt; pnode_tokens
-    member_admin_operation(operation)
-    read_token() =&gt; pnode_tokens
-    requestrestartservicestatus(service_option)
-    restartservices(restart_option, service_option)
-</code></pre></div>
-<p>And if you wanted to exclude the functions from the output, just add the <code>-NoFunctions</code> switch:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Fields ip*,nat* -NoFunctions
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FIELD              TYPE          SUPPORTS BASE SEARCH
------              ----          -------- ---- ------
-ipv4_address       string            S         =
-ipv6_address       string            S         =
-ipv6_setting       ipv6setting   RWU
-ipv6_static_routes ipv6setting[] RWU
-nat_setting        natsetting    RWU
-</code></pre></div>
-<p><code>-Operations</code> is used to filter fields by the operations they support in the SUPPORTS column. It also takes a string array (no wildcards) comprised of letter codes you want to limit the results to. So if you only wanted to return the fields that are searchable, you could do this:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Operations s -NoFunctions
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FIELD                       TYPE     SUPPORTS BASE SEARCH
------                       ----     -------- ---- ------
-comment                     string   RWU S         :=~
-config_addr_type            enum     RWU S    X    =
-enable_ha                   bool     RWU S         =
-enable_ro_api_access        bool     RWU S         =
-host_name                   string   RWU S    X    :=~
-ipv4_address                string       S         =
-ipv6_address                string       S         =
-master_candidate            bool     RWU S         =
-platform                    enum     RWU S    X    =
-preserve_if_owns_delegation bool     RWU S         =
-router_id                   uint     RWU S         =
-service_type_configuration  enum     RWU S    X    =
-</code></pre></div>
-<p>If you're done checking field details and want to know about specific functions, <code>-Functions</code> works the same way as <code>-Fields</code> and <code>-NoFields</code> works the same way as <code>-NoFunctions</code>. So let's say you want to see the traffic capture related functions for <code>member</code>, you could do something like this:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Functions capture* -NoFields
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FUNCTIONS
-    capture_traffic_control(action, interface, seconds_to_run)
-    capture_traffic_status() =&gt; status, file_exists, file_size
-</code></pre></div>
-<h2 id="detailed-view">Detailed View<a class="headerlink" href="#detailed-view" title="Permanent link">&para;</a></h2>
-<p>The default view of fields and functions is intended to be a quick reference. But particularly for functions, sometimes you need more detail. For that, you can use the <code>-Detailed</code> switch:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Functions capture* -NoFields -Detailed
-
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FUNCTIONS
-
-    ----------------------------------------------------------
-    capture_traffic_control
-    ----------------------------------------------------------
-        Starts/Stops a traffic capture session on the specified member node.
-
-    INPUTS
-
-        action &lt;{ START | STOP }&gt;
-            The traffic capture action.
-
-        interface &lt;{ ALL | HA | LAN1 | LAN2 | MGMT }&gt;
-            The interface on which the traffic is captured.
-
-        seconds_to_run &lt;uint&gt;
-            The number of seconds for which the traffic capture is going to run.
-
-    ----------------------------------------------------------
-    capture_traffic_status
-    ----------------------------------------------------------
-        Gets traffic capture status on the specified member node.
-
-    OUTPUTS
-
-        status &lt;{ STOPPED | RUNNING | UNKNOWN }&gt;
-            The status of the capture operation for the member.
-
-        file_exists &lt;bool&gt;
-            Determines if the capture file for the member exist or not.
-
-        file_size &lt;uint&gt;
-            The size of the traffic capture file for the member.
-</code></pre></div>
-<p>It can also help to get details for fields as well. Let's add the <code>-Detailed</code> flag to one of our previous examples:</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Fields ip*,nat* -NoFunctions -Detailed
-OBJECT
-    member (WAPI 2.7)
-
-RESTRICTIONS
-    scheduling, csv
-
-FIELDS
-    ipv4_address &lt;string&gt;
-        The member&#39;s IPv4 Address.
-
-        Supports: Search
-
-        This field is available for search via:
-            &#39;=&#39; (exact equality)
-
-    ipv6_address &lt;string&gt;
-        The member&#39;s IPv6 Address.
-
-        Supports: Search
-
-        This field is available for search via:
-            &#39;=&#39; (exact equality)
-
-    ipv6_setting &lt;ipv6setting&gt;
-        IPV6 setting for member.
-
-        Supports: Read, Write, Update
-
-    ipv6_static_routes &lt;ipv6setting[]&gt;
-        List of IPv6 static routes.
-
-        Supports: Read, Write, Update
-
-    nat_setting &lt;natsetting&gt;
-        NAT settings for the member.
-
-        Supports: Read, Write, Update
-</code></pre></div>
-<h2 id="raw-output-and-html-fallback">Raw Output and HTML Fallback<a class="headerlink" href="#raw-output-and-html-fallback" title="Permanent link">&para;</a></h2>
-<p>For whatever reason, you may want to just get the raw schema data back instead of a pretty printed view. In that case, use the <code>-Raw</code> switch. Filtering parameters are ignored when using <code>-Raw</code>.</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -Raw
-
-cloud_additional_restrictions : {}
-fields                        : {@{doc=The active server of a Grid member.; is_array=False; name=active_position;
-                                standard_field=False; supports=r; type=System.Object[]}, @{doc=The additional IP list
-                                of a Grid member. This list contains additional interface information that can be used
-                                at the member level. Note that interface structure(s) with interface type set to
-                                &#39;MGMT&#39; are not supported.; is_array=True; name=additional_ip_list; schema=;
-                                standard_field=False; supports=rwu; type=System.Object[]; wapi_primitive=struct},
-                                @{doc=The BGP configuration for anycast for a Grid member.; is_array=True;
-                                name=bgp_as; schema=; standard_field=False; supports=rwu; type=System.Object[];
-                                wapi_primitive=struct}, @{doc=Starts/Stops a traffic capture session on the specified
-                                member node.; is_array=False; name=capture_traffic_control; schema=;
-                                standard_field=False; supports=rwu; type=System.Object[]; wapi_primitive=funccall}...}
-restrictions                  : {scheduling, csv}
-schema_version                : 2
-type                          : member
-version                       : 2.7
-wapi_primitive                : object
-</code></pre></div>
-<p>Until schema queries reach feature parity with the HTML docs, it may still occasionally be necessary to view the full HTML. In these cases, you can use <code>-LaunchHTML</code> as a shortcut to get to the specific object page you want to view. It will attempt to "start" the URL for that page which should open your default web browser to the location.</p>
-<div class="highlight"><pre><span></span><code>PS C:\&gt; Get-IBSchema member -LaunchHTML
-
-# (launches browser to https://&lt;WAPIHost&gt;/wapidoc/objects/member.html)
-</code></pre></div>
-                
-                  
+<p>If there is a problem accessing the vault during import, an error is thrown and the module falls back to storing connection profiles on the filesystem.</p>
+<h3 id="disable-vault-key-storage">Disable Vault Key Storage<a class="headerlink" href="#disable-vault-key-storage" title="Permanent link">&para;</a></h3>
+<p>To disable vault profile storage, just remove the vault related environment variables and force re-load the module. There is currently no way to migrate local profiles to vault profiles or the other way around. This may be added in a future release.</p>
+<h2 id="additional-considerations">Additional Considerations<a class="headerlink" href="#additional-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="azure-keyvault">Azure KeyVault<a class="headerlink" href="#azure-keyvault" title="Permanent link">&para;</a></h3>
+<p>Azure KeyVault has deprecated the ability to have vaults that allow immediate secret removal. "soft-delete" is now the default mode and will soon be mandatory which makes it so that deleted secrets are kept in a sort of recycle-bin until their configurable retention period expires.</p>
+<p>If you attempt to create a new secret using the SecretManagement module with a name that matches a soft-deleted secret, the call will fail. This means certain profile management actions within Posh-IBWAPI may fail like removing a connection profile and then re-creating it later or renaming one and then renaming it back.</p>
+<p>While it is possible to purge soft-deleted secrets, it is not possible using only the SecretManagement module. I have opened <a href="https://github.com/Azure/azure-powershell/issues/19733">feature request #19733</a> to address this with the Azure PowerShell team.</p>
+<h3 id="sharing-configs-and-vaults">Sharing Configs and Vaults<a class="headerlink" href="#sharing-configs-and-vaults" title="Permanent link">&para;</a></h3>
+<p>When using centralized vaults, it is possible to point multiple instances of Posh-IBWAPI to the same vault and effectively share the config. However, keep in mind that if one instances changes a profile or changes the active profile, the change won't be seen by the other instances unless they force re-load the module or load a new instance.</p>
                 
               
               
@@ -1126,7 +944,7 @@ wapi_primitive                : object
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Stateless-Mode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stateless Mode" rel="prev">
+        <a href="../Using-IBFile-Functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using IBFile Functions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1135,20 +953,20 @@ wapi_primitive                : object
               <span class="md-footer__direction">
                 Previous
               </span>
-              Stateless Mode
+              Using IBFile Functions
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Using-IBFile-Functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Using IBFile Functions" rel="next">
+        <a href="../WAPI-to-NIOS-Versions/" class="md-footer__link md-footer__link--next" aria-label="Next: WAPI to NIOS Versions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Using IBFile Functions
+              WAPI to NIOS Versions
             </div>
           </div>
           <div class="md-footer__button md-icon">
