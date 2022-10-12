@@ -712,7 +712,7 @@
 </ul>
 <p>If you want to modify an object, you have to use a <code>Get-IBObject</code> to read it first. This will give you the <code>_ref</code> <em>(among other base fields)</em>, which you will need in order to update that object.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get a specific host by name (case-insensitive)</span>
-<span class="nv">$testhost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name:=test_host.test.com&#39;</span>
+<span class="nv">$testhost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;name:&#39;</span><span class="p">=</span><span class="s1">&#39;test_host.test.com&#39;</span><span class="p">}</span>
 
 <span class="c"># $testhost looks like the following when converted to JSON</span>
 <span class="p">{</span>
@@ -731,7 +731,7 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <code>-ReturnAllFields</code> to return all available data for a given object type. This flag requires WAPI version 1.7.5+ because it involves extra queries to the schema under the hood. Thus, it is also less performant than a normal query because of the extra roundtrips to the server. If you know the fields you want, it is better to use <code>-ReturnFields 'field1','field2','fieldX'</code>. Using <code>-ReturnFields</code> will prevent the base fields from being returned unless you explicitly include them or also use <code>-ReturnBaseFields</code>.</p>
+<p>You can use <code>-ReturnAll</code> to return all available data for a given object type. This flag requires WAPI version 1.7.5+ because it involves extra queries to the schema under the hood. Thus, it is also less performant than a normal query because of the extra roundtrips to the server. If you know the fields you want, it is better to use <code>-ReturnField 'field1','field2','fieldX'</code>. Using <code>-ReturnField</code> will prevent the base fields from being returned unless you explicitly include them or also use <code>-ReturnBase</code>.</p>
 </div>
 <p>There are two different ways to modify the host you just queried. They involve slightly different ways of calling <code>Set-IBObject</code>. The easiest, particularly if you're making the same change to multiple objects, is usually to just pipe the variable to <code>Set-IBObject</code> and provide a template for the changes with <code>-TemplateObject</code>. This works because <code>Set-IBObject</code> knows how to pull the <code>_ref</code> field out of the pipelined object and use it for <code>-ObjectRef</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># create a template to change the IP address</span>
@@ -758,23 +758,23 @@
 </code></pre></div>
 <h2 id="search-for-host-by-name">Search for HOST by name<a class="headerlink" href="#search-for-host-by-name" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># case-sensitive exact match using &#39;=&#39;</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name=my.fqdn.org&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="s1">&#39;name=my.fqdn.org&#39;</span>
 
 <span class="c"># case-insensitive exact match using &#39;:=&#39; (Requires WAPI 1.4+)</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name:=my.fqdn.org&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;name:&#39;</span><span class="p">=</span><span class="s1">&#39;my.fqdn.org&#39;</span><span class="p">}</span>
 
 <span class="c"># case-sensitive Regex partial match using &#39;~=&#39;</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name~=my&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;name~&#39;</span><span class="p">=</span><span class="s1">&#39;my&#39;</span><span class="p">}</span>
 
 <span class="c"># case-insensitive Regex partial match using &#39;:~=&#39; (Requires WAPI 1.4+)</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name:~=my&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;name:~&#39;</span><span class="p">=</span><span class="s1">&#39;my&#39;</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="search-for-fixedaddress-by-mac">Search for FixedAddress by MAC<a class="headerlink" href="#search-for-fixedaddress-by-mac" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># return base fields + mac</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">fixedaddress</span> <span class="n">-filters</span> <span class="s1">&#39;mac=aa:bb:cc:11:22:33&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;mac&#39;</span> <span class="n">-base</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">fixedaddress</span> <span class="n">-Filter</span> <span class="s1">&#39;mac=aa:bb:cc:11:22:33&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;mac&#39;</span> <span class="n">-base</span>
 </code></pre></div>
 <h2 id="search-for-objects-associated-with-a-specific-ip-address">Search for objects associated with a specific IP address<a class="headerlink" href="#search-for-objects-associated-with-a-specific-ip-address" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nv">$ipObj</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-filters</span> <span class="s1">&#39;status=USED&#39;</span><span class="p">,</span><span class="s1">&#39;ip_address=1.1.1.1&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">$ipObj</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-Filter</span> <span class="s1">&#39;status=USED&#39;</span><span class="p">,</span><span class="s1">&#39;ip_address=1.1.1.1&#39;</span>
 
 <span class="c"># the object references are stored in the &#39;objects&#39; field, but we can</span>
 <span class="c"># also query for additional information</span>
@@ -799,7 +799,7 @@
 </code></pre></div>
 <h2 id="delete-a-host">Delete a HOST<a class="headerlink" href="#delete-a-host" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># search for the host we want to delete</span>
-<span class="nv">$delHost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name=wapi.test.org&#39;</span>
+<span class="nv">$delHost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="s1">&#39;name=wapi.test.org&#39;</span>
 
 <span class="c"># delete it</span>
 <span class="nv">$delHost</span> <span class="p">|</span> <span class="nb">Remove-IBObject</span>
@@ -873,7 +873,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">New-IBObject</span> <span class="n">-type</span> <span class="n">fixedaddress</span> <span class="n">-IBObject</span> <span class="p">@{</span><span class="n">ipv4addr</span><span class="p">=</span><span class="s1">&#39;1.1.1.21&#39;</span><span class="p">;</span><span class="n">mac</span><span class="p">=</span><span class="s1">&#39;00:00:00:00:00:00&#39;</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="search-for-a-subnet">Search for a subnet<a class="headerlink" href="#search-for-a-subnet" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nv">$subnet</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">network</span> <span class="n">-filters</span> <span class="s1">&#39;network=1.1.1.0/24&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">$subnet</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">network</span> <span class="n">-Filter</span> <span class="s1">&#39;network=1.1.1.0/24&#39;</span>
 </code></pre></div>
 <h2 id="get-next-available-address-from-a-subnet">Get Next Available address from a subnet<a class="headerlink" href="#get-next-available-address-from-a-subnet" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># using the $subnet variable returned from Get-IBObject</span>
@@ -890,14 +890,14 @@
 <span class="nv">$subnet</span> <span class="p">|</span> <span class="nb">Invoke-IBFunction</span> <span class="n">-name</span> <span class="s1">&#39;next_available_ip&#39;</span> <span class="n">-args</span> <span class="p">@{</span><span class="n">num</span><span class="p">=</span><span class="n">5</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">-expand</span> <span class="n">ips</span>
 </code></pre></div>
 <h2 id="get-all-the-addresses-and-records-in-a-subnet">Get all the addresses (and records) in a subnet<a class="headerlink" href="#get-all-the-addresses-and-records-in-a-subnet" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-filters</span> <span class="s1">&#39;network=1.1.1.0/24&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-Filter</span> <span class="s1">&#39;network=1.1.1.0/24&#39;</span>
 </code></pre></div>
 <h2 id="get-all-the-ip-addresses-in-a-given-range">Get all the IP addresses in a given range<a class="headerlink" href="#get-all-the-ip-addresses-in-a-given-range" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-filters</span> <span class="s1">&#39;ip_address&gt;=1.1.1.1&#39;</span><span class="p">,</span><span class="s1">&#39;ip_address&lt;=1.1.1.10&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">ipv4address</span> <span class="n">-Filter</span> <span class="s1">&#39;ip_address&gt;=1.1.1.1&#39;</span><span class="p">,</span><span class="s1">&#39;ip_address&lt;=1.1.1.10&#39;</span>
 </code></pre></div>
 <h2 id="search-for-hosts-by-extensible-attribute">Search for HOSTS by Extensible Attribute<a class="headerlink" href="#search-for-hosts-by-extensible-attribute" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># when filtering on EA, prepend &#39;*&#39; to the front of the EA name</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;*Floor=3rd&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;extattrs&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="s1">&#39;*Floor=3rd&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;extattrs&#39;</span>
 </code></pre></div>
 <h2 id="add-extensible-attributes-to-an-object">Add extensible Attributes to an object<a class="headerlink" href="#add-extensible-attributes-to-an-object" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># using a $myhost variable returned by Get-IBObject</span>
@@ -905,12 +905,12 @@
 
 <span class="c"># combine with the previous example to change all hosts on the</span>
 <span class="c"># 3rd Floor to the 5th Floor</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;*Floor=3rd&#39;</span> <span class="p">|</span> 
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="s1">&#39;*Floor=3rd&#39;</span> <span class="p">|</span> 
   <span class="nb">Set-IBObject</span> <span class="n">-template</span> <span class="p">@{</span><span class="n">extattrs</span><span class="p">=@{</span><span class="n">Floor</span><span class="p">=@{</span><span class="n">value</span><span class="p">=</span><span class="s1">&#39;5th&#39;</span><span class="p">}}}</span>
 </code></pre></div>
 <h2 id="add-a-value-to-a-list-type-extensible-attribute">Add a value to a "List" type Extensible Attribute<a class="headerlink" href="#add-a-value-to-a-list-type-extensible-attribute" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># get the existing definition</span>
-<span class="nv">$listdef</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">extensibleattributedef</span> <span class="n">-Filters</span> <span class="s1">&#39;name=MyList&#39;</span> <span class="n">-Fields</span> <span class="s1">&#39;list_values&#39;</span>
+<span class="nv">$listdef</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">extensibleattributedef</span> <span class="n">-Filter</span> <span class="s1">&#39;name=MyList&#39;</span> <span class="n">-Fields</span> <span class="s1">&#39;list_values&#39;</span>
 
 <span class="c"># add a new item to the list</span>
 <span class="nv">$listdef</span><span class="p">.</span><span class="n">list_values</span> <span class="p">+=</span> <span class="p">@{</span><span class="n">value</span><span class="p">=</span><span class="s1">&#39;NewValue&#39;</span><span class="p">}</span>
@@ -927,7 +927,7 @@
 <span class="nv">$newhost</span> <span class="p">|</span> <span class="nb">New-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span>
 </code></pre></div>
 <h2 id="get-all-the-aliases-on-a-host">Get all the aliases on a host<a class="headerlink" href="#get-all-the-aliases-on-a-host" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-filters</span> <span class="s1">&#39;name=wapialiased.test.org&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;aliases&#39;</span> <span class="n">-base</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">host</span> <span class="n">-Filter</span> <span class="s1">&#39;name=wapialiased.test.org&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;aliases&#39;</span> <span class="n">-base</span>
 </code></pre></div>
 <h2 id="remove-or-modify-aliases-from-a-host">Remove or modify aliases from a host<a class="headerlink" href="#remove-or-modify-aliases-from-a-host" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># using a $myhost variable returned by Get-IBObject</span>
@@ -944,14 +944,14 @@
 </code></pre></div>
 <h2 id="delete-a-cname">DELETE a CNAME<a class="headerlink" href="#delete-a-cname" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># get a reference to the existing object</span>
-<span class="nv">$myCname</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">cname</span> <span class="n">-filters</span> <span class="s1">&#39;name=cname.test.org&#39;</span>
+<span class="nv">$myCname</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">cname</span> <span class="n">-Filter</span> <span class="s1">&#39;name=cname.test.org&#39;</span>
 
 <span class="c"># delete it</span>
 <span class="nv">$myCname</span> <span class="p">|</span> <span class="nb">Remove-IBObject</span>
 </code></pre></div>
 <h2 id="move-a-cname-to-point-to-a-new-canonical">Move a CNAME to point to a new canonical<a class="headerlink" href="#move-a-cname-to-point-to-a-new-canonical" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># get a reference to the existing object</span>
-<span class="nv">$myCname</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">cname</span> <span class="n">-filters</span> <span class="s1">&#39;name=cname.test.org&#39;</span>
+<span class="nv">$myCname</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">record</span><span class="p">:</span><span class="n">cname</span> <span class="n">-Filter</span> <span class="s1">&#39;name=cname.test.org&#39;</span>
 
 <span class="c"># set a new canonical</span>
 <span class="nv">$myCname</span> <span class="p">|</span> <span class="nb">Set-IBObject</span> <span class="n">-template</span> <span class="p">@{</span><span class="n">canonical</span><span class="p">=</span><span class="s1">&#39;wapi-new.test.org&#39;</span><span class="p">}</span>
@@ -995,7 +995,7 @@
 <span class="nb">Get-IBObject</span> <span class="n">-ref</span> <span class="s1">&#39;network/ZG5zLm5l...&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;zone_associations&#39;</span> <span class="n">-base</span>
 
 <span class="c"># or not</span>
-<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">network</span> <span class="n">-filters</span> <span class="s1">&#39;network=45.0.46.0/24&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;zone_associations&#39;</span> <span class="n">-base</span>
+<span class="nb">Get-IBObject</span> <span class="n">-type</span> <span class="n">network</span> <span class="n">-Filter</span> <span class="s1">&#39;network=45.0.46.0/24&#39;</span> <span class="n">-fields</span> <span class="s1">&#39;zone_associations&#39;</span> <span class="n">-base</span>
 </code></pre></div>
 <h2 id="add-a-zone-of-type-forward">Add a zone, of type forward<a class="headerlink" href="#add-a-zone-of-type-forward" title="Permanent link">&para;</a></h2>
 <p><code>forwarding_servers</code> are the grid members that will forward for that zone</p>

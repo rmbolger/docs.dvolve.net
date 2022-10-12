@@ -545,8 +545,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-objectref" class="md-nav__link">
-    -ObjectRef
+  <a href="#-batchgroupsize" class="md-nav__link">
+    -BatchGroupSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-batchmode" class="md-nav__link">
+    -BatchMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-credential" class="md-nav__link">
+    -Credential
   </a>
   
 </li>
@@ -559,8 +573,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-batchmode" class="md-nav__link">
-    -BatchMode
+  <a href="#-objectref" class="md-nav__link">
+    -ObjectRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-profilename" class="md-nav__link">
+    -ProfileName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-skipcertificatecheck" class="md-nav__link">
+    -SkipCertificateCheck
   </a>
   
 </li>
@@ -580,22 +608,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-credential" class="md-nav__link">
-    -Credential
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-skipcertificatecheck" class="md-nav__link">
-    -SkipCertificateCheck
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-profilename" class="md-nav__link">
-    -ProfileName
+  <a href="#-confirm" class="md-nav__link">
+    -Confirm
   </a>
   
 </li>
@@ -603,13 +617,6 @@
           <li class="md-nav__item">
   <a href="#-whatif" class="md-nav__link">
     -WhatIf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-confirm" class="md-nav__link">
-    -Confirm
   </a>
   
 </li>
@@ -926,8 +933,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-objectref" class="md-nav__link">
-    -ObjectRef
+  <a href="#-batchgroupsize" class="md-nav__link">
+    -BatchGroupSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-batchmode" class="md-nav__link">
+    -BatchMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-credential" class="md-nav__link">
+    -Credential
   </a>
   
 </li>
@@ -940,8 +961,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-batchmode" class="md-nav__link">
-    -BatchMode
+  <a href="#-objectref" class="md-nav__link">
+    -ObjectRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-profilename" class="md-nav__link">
+    -ProfileName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-skipcertificatecheck" class="md-nav__link">
+    -SkipCertificateCheck
   </a>
   
 </li>
@@ -961,22 +996,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-credential" class="md-nav__link">
-    -Credential
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-skipcertificatecheck" class="md-nav__link">
-    -SkipCertificateCheck
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-profilename" class="md-nav__link">
-    -ProfileName
+  <a href="#-confirm" class="md-nav__link">
+    -Confirm
   </a>
   
 </li>
@@ -984,13 +1005,6 @@
           <li class="md-nav__item">
   <a href="#-whatif" class="md-nav__link">
     -WhatIf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-confirm" class="md-nav__link">
-    -Confirm
   </a>
   
 </li>
@@ -1055,9 +1069,9 @@
 <h2 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h2>
 <p>Delete an object from Infoblox.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">Remove-IBObject</span> <span class="p">[</span><span class="n">-ObjectRef</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[[</span><span class="n">-DeleteArgs</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-BatchMode</span><span class="p">]</span> <span class="p">[[</span><span class="n">-WAPIHost</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[[</span><span class="n">-ProfileName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Remove-IBObject</span> <span class="p">[</span><span class="n">-ObjectRef</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[[</span><span class="n">-DeleteArgs</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-BatchMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-BatchGroupSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span>
+ <span class="p">[[</span><span class="n">-ProfileName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-WAPIHost</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Specify an object reference to delete that object from the Infoblox database.</p>
@@ -1073,16 +1087,40 @@
 </code></pre></div>
 <p>Search for hosts with their comment set to 'decommissioned' and delete them all.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<h3 id="-objectref">-ObjectRef<a class="headerlink" href="#-objectref" title="Permanent link">&para;</a></h3>
-<p>Object reference string. This is usually found in the "_ref" field of returned objects.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+<h3 id="-batchgroupsize">-BatchGroupSize<a class="headerlink" href="#-batchgroupsize" title="Permanent link">&para;</a></h3>
+<p>The number of objects that should be sent in each group when -BatchMode is specified. The default is 1000.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Int32</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">_ref, ref</span>
+<span class="nt">Aliases</span><span class="p">:</span>
 
-<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName, ByValue)</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-batchmode">-BatchMode<a class="headerlink" href="#-batchmode" title="Permanent link">&para;</a></h3>
+<p>If specified, objects passed via pipeline will be batched together into groups and sent as a single WAPI call per group instead of a WAPI call per object. This can increase performance but if any of the individual calls fail, the whole group is cancelled.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-credential">-Credential<a class="headerlink" href="#-credential" title="Permanent link">&para;</a></h3>
+<p>Username and password for the Infoblox appliance. This parameter is required unless it was already set using Set-IBConfig.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSCredential</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 <h3 id="-deleteargs">-DeleteArgs<a class="headerlink" href="#-deleteargs" title="Permanent link">&para;</a></h3>
@@ -1097,8 +1135,32 @@
 <span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
-<h3 id="-batchmode">-BatchMode<a class="headerlink" href="#-batchmode" title="Permanent link">&para;</a></h3>
-<p>If specified, objects passed via pipeline will be batched together into groups and sent as a single WAPI call per group instead of a WAPI call per object. This can increase performance but if any of the individual calls fail, the whole group is cancelled.</p>
+<h3 id="-objectref">-ObjectRef<a class="headerlink" href="#-objectref" title="Permanent link">&para;</a></h3>
+<p>Object reference string. This is usually found in the "_ref" field of returned objects.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">_ref, ref</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName, ByValue)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-profilename">-ProfileName<a class="headerlink" href="#-profilename" title="Permanent link">&para;</a></h3>
+<p>The name of a specific config profile to use instead of the currently active one.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-skipcertificatecheck">-SkipCertificateCheck<a class="headerlink" href="#-skipcertificatecheck" title="Permanent link">&para;</a></h3>
+<p>If set, SSL/TLS certificate validation will be disabled. Overrides value stored with Set-IBConfig.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <span class="nt">Aliases</span><span class="p">:</span>
@@ -1133,38 +1195,14 @@
 <span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
-<h3 id="-credential">-Credential<a class="headerlink" href="#-credential" title="Permanent link">&para;</a></h3>
-<p>Username and password for the Infoblox appliance. This parameter is required unless it was already set using Set-IBConfig.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSCredential</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-
-<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
-<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-skipcertificatecheck">-SkipCertificateCheck<a class="headerlink" href="#-skipcertificatecheck" title="Permanent link">&para;</a></h3>
-<p>If set, SSL/TLS certificate validation will be disabled. Overrides value stored with Set-IBConfig.</p>
+<h3 id="-confirm">-Confirm<a class="headerlink" href="#-confirm" title="Permanent link">&para;</a></h3>
+<p>Prompts you for confirmation before running the cmdlet.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cf</span>
 
 <span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-profilename">-ProfileName<a class="headerlink" href="#-profilename" title="Permanent link">&para;</a></h3>
-<p>The name of a specific config profile to use instead of the currently active one.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-
-<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
 <span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
@@ -1174,18 +1212,6 @@
 <div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wi</span>
-
-<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-confirm">-Confirm<a class="headerlink" href="#-confirm" title="Permanent link">&para;</a></h3>
-<p>Prompts you for confirmation before running the cmdlet.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cf</span>
 
 <span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>

@@ -830,7 +830,7 @@
 </code></pre></div>
 <p>Retrieve a set of objects using <code>Get-IBObject</code>. The only required parameter is <code>ObjectType</code>. Everything else like filters and return fields are optional.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span>
-<span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filters</span> <span class="s1">&#39;name~=example.com&#39;</span> <span class="n">-MaxResults</span> <span class="n">10</span> <span class="n">-ReturnFields</span> <span class="s1">&#39;extattrs&#39;</span>
+<span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;name~&#39;</span><span class="p">=</span><span class="s1">&#39;example\.com&#39;</span><span class="p">}</span> <span class="n">-MaxResults</span> <span class="n">10</span> <span class="n">-ReturnField</span> <span class="s1">&#39;extattrs&#39;</span>
 </code></pre></div>
 <p>If you're just exploring the WAPI object model, it can be helpful to convert the resulting objects back to JSON for readability.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">-First</span> <span class="n">1</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span>
@@ -856,7 +856,7 @@
 </code></pre></div>
 <p>To modify an existing object, the easiest way is usually to get a copy of it, modify the copy, and save the result with <code>Set-IBObject</code>. <em>Be wary of objects that return read-only fields. You need to strip them out before saving or an error will be thrown.</em></p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get a copy of the host</span>
-<span class="nv">$myhost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filters</span> <span class="s1">&#39;name=web1.example.com&#39;</span>
+<span class="nv">$myhost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filter</span> <span class="s1">&#39;name=web1.example.com&#39;</span>
 
 <span class="c"># remove the read-only &#39;host&#39; field from the nested &#39;record:host_ipv4addr&#39; object</span>
 <span class="nv">$myhost</span><span class="p">.</span><span class="n">ipv4addrs</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">PSObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
@@ -869,14 +869,14 @@
 </code></pre></div>
 <p>If you need to make the same change to a set of objects, you can also pass the set of object references via the pipeline and use a template object to change all of them in the same way.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get all hosts in the Los Angeles site</span>
-<span class="nv">$laHosts</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filters</span> <span class="s1">&#39;*Site=Los Angeles&#39;</span>
+<span class="nv">$laHosts</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filter</span> <span class="p">@{</span><span class="s1">&#39;*Site&#39;</span><span class="p">=</span><span class="s1">&#39;Los Angeles&#39;</span><span class="p">}</span>
 
 <span class="c"># Move them to the New York site</span>
 <span class="nv">$laHosts</span> <span class="p">|</span> <span class="nb">Set-IBObject</span> <span class="n">-Template</span> <span class="p">@{</span><span class="n">extattrs</span><span class="p">=@{</span><span class="n">Site</span><span class="p">=@{</span><span class="n">value</span><span class="p">=</span><span class="s1">&#39;New York&#39;</span><span class="p">}}}</span>
 </code></pre></div>
 <p>Deleting one or more objects is as simple as passing one or more object references to <code>Remove-IBObject</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get hosts being decommissioned</span>
-<span class="nv">$toDelete</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filters</span> <span class="s1">&#39;comment=decommission&#39;</span>
+<span class="nv">$toDelete</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filter</span> <span class="s1">&#39;comment=decommission&#39;</span>
 
 <span class="c"># Delete them</span>
 <span class="nv">$toDelete</span> <span class="p">|</span> <span class="nb">Remove-IBObject</span>
