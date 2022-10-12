@@ -1001,7 +1001,7 @@
 <h2 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h2>
 <p>Upload a file to Infoblox using one of the fileop upload functions.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">Send-IBFile</span> <span class="p">[</span><span class="n">-FunctionName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Path</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-FunctionArgs</span> <span class="p">&lt;</span><span class="n">Hashtable</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ObjectRef</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Send-IBFile</span> <span class="p">[</span><span class="n">-FunctionName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Path</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-FunctionArgs</span> <span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ObjectRef</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
  <span class="p">[</span><span class="n">-OverrideTransferHost</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
  <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
@@ -1027,7 +1027,7 @@
 </code></pre></div>
 <h3 id="-functionargs">-FunctionArgs<a class="headerlink" href="#-functionargs" title="Permanent link">&para;</a></h3>
 <p>A hashtable with the required parameters for the function. NOTE: 'token' parameters are handled automatically and can be ignored.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hashtable</span>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">IDictionary</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">args</span>
 
