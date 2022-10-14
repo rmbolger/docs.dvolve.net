@@ -880,11 +880,9 @@
 <li>Optionally return all fields for an object without needing to specify each one individually <em>(Requires WAPI version 1.7.5+)</em></li>
 <li>Use <code>Get-IBSchema</code> for Get-Help style querying of the WAPI object model <em>(Requires WAPI version 1.7.5+)</em>. <a href="Guides/Using-Get-IBSchema/">(Guide)</a></li>
 <li>Error details in the body of HTTP 400 responses are exposed instead of being swallowed by Invoke-RestMethod.</li>
-<li>Pipeline support so you can do things like pass the results from <code>Get-IBObject</code> directly to <code>Remove-IBObject</code>.</li>
 <li>Optionally batch pipelined requests to increase performance.</li>
 <li>Optionally ignore certificate validation errors.</li>
-<li>Save connection profiles so you don't have to pass multiple common parameters with every call.</li>
-<li>Multiple connection profiles supported for multi-grid environments or if you need to save different credentials for different purposes.</li>
+<li>Save connection profiles to use automatically with functions instead of supplying them to each call. Multiple profiles supported for multi-grid environments or differing credentials on the same grid.</li>
 <li><a href="https://devblogs.microsoft.com/powershell/secretmanagement-and-secretstore-are-generally-available/">SecretManagement</a> support for connection profiles. <a href="Guides/Using-SecretManagement/">(Guide)</a></li>
 <li>Cloud friendly stateless mode supported via environment variables. <a href="Guides/Stateless-Mode/">(Guide)</a></li>
 <li>Cross-platform <a href="https://github.com/PowerShell/PowerShell">PowerShell</a> support</li>
@@ -905,9 +903,9 @@
 </code></pre></div>
 <p>You can also download the source manually from GitHub and extract the <code>Posh-IBWAPI</code> folder to your desired module location.</p>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<p>Every WAPI call needs a host, version, and credentials. Set them once for the session with <code>Set-IBConfig</code> and you won't need to add them to every call. If your grid is still using self-signed certs, you may also need to use the <code>SkipCertificateCheck</code> parameter. In addition to standard version numbers like <code>'2.2'</code>, the <code>-WAPIVersion</code> parameter also accepts <code>'latest'</code> and will query the grid master for the latest supported version.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Set-IBConfig</span> <span class="n">-ProfileName</span> <span class="s1">&#39;mygrid&#39;</span> <span class="n">-WAPIHost</span> <span class="s1">&#39;gridmaster.example.com&#39;</span> <span class="n">-WAPIVersion</span> <span class="s1">&#39;latest&#39;</span> <span class="p">`</span>
-    <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-SkipCertificateCheck</span>
+<p>Every WAPI call needs a host, version, and credentials. Set them once using <code>Set-IBConfig</code> and you won't need to add them to every call. If your grid is still using self-signed certs, you may also need to use the <code>SkipCertificateCheck</code> parameter. In addition to standard version numbers like <code>'2.2'</code>, the <code>-WAPIVersion</code> parameter also accepts <code>'latest'</code> and will query the grid master for the latest supported version.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-IBConfig</span> <span class="n">-ProfileName</span> <span class="s1">&#39;mygrid&#39;</span> <span class="n">-WAPIHost</span> <span class="s1">&#39;gridmaster.example.com&#39;</span> <span class="p">`</span>
+    <span class="n">-WAPIVersion</span> <span class="s1">&#39;latest&#39;</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-SkipCertificateCheck</span>
 </code></pre></div>
 <p>Retrieve a set of objects using <code>Get-IBObject</code>. The only required parameter is <code>ObjectType</code>. Everything else like filters and return fields are optional.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span>
@@ -919,12 +917,17 @@
 <p>You may notice that all objects returned by Infoblox have a <code>_ref</code> field. That is known as the object reference and can be used in any function that accepts an <code>ObjectRef</code> parameter. In the case of <code>Get-IBObject</code>, it will return that specific object.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="n">-ObjectRef</span> <span class="s1">&#39;record:host/asdfqwerasdfqwerasdfqwerasdfqwer&#39;</span>
 </code></pre></div>
-<p>Create a new object with <code>New-IBObject</code>. All you need to provide is the object type and an object with the minimum required fields defined. Embedded WAPI functions work just fine here.</p>
+<p>Create a new object with <code>New-IBObject</code> by supplying the object type and an object with the minimum required fields defined. Embedded WAPI functions work just fine here.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Build the record:host object we want to create.</span>
 <span class="c"># NOTE: An error will be thrown if the example.com DNS zone doesn&#39;t</span>
 <span class="c"># exist in Infoblox</span>
-<span class="nv">$newhost</span> <span class="p">=</span> <span class="p">@{</span><span class="n">name</span><span class="p">=</span><span class="s1">&#39;web1.example.com&#39;</span><span class="p">;</span><span class="n">comment</span><span class="p">=</span><span class="s1">&#39;web server&#39;</span><span class="p">}</span>
-<span class="nv">$newhost</span><span class="p">.</span><span class="n">ipv4addrs</span> <span class="p">=</span> <span class="p">@(</span> <span class="p">@{</span><span class="n">ipv4addr</span><span class="p">=</span><span class="s1">&#39;10.10.10.1&#39;</span><span class="p">}</span> <span class="p">)</span>
+<span class="nv">$newhost</span> <span class="p">=</span> <span class="p">@{</span>
+    <span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;web1.example.com&#39;</span>
+    <span class="n">ipv4addrs</span> <span class="p">=</span> <span class="p">@(</span>
+        <span class="p">@{</span> <span class="n">ipv4addr</span> <span class="p">=</span> <span class="s1">&#39;10.10.10.1&#39;</span> <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">comment</span> <span class="p">=</span> <span class="s1">&#39;web server&#39;</span>
+<span class="p">}</span>
 
 <span class="c"># Create the object</span>
 <span class="nb">New-IBObject</span> <span class="n">-ObjectType</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-IBObject</span> <span class="nv">$newhost</span>
@@ -932,18 +935,20 @@
 <span class="c"># Modify the object so we can make another and this time use an</span>
 <span class="c"># embedded function to set the IP address.</span>
 <span class="nv">$newhost</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;web2.example.com&#39;</span>
-<span class="nv">$newhost</span><span class="p">.</span><span class="n">ipv4addrs</span> <span class="p">=</span> <span class="p">@(</span> <span class="p">@{</span><span class="n">ipv4addr</span><span class="p">=</span><span class="s1">&#39;func:nextavailableip:10.10.10.0/24&#39;</span><span class="p">}</span> <span class="p">)</span>
+<span class="nv">$newhost</span><span class="p">.</span><span class="n">ipv4addrs</span> <span class="p">=</span> <span class="p">@(</span>
+    <span class="p">@{</span> <span class="n">ipv4addr</span> <span class="p">=</span> <span class="s1">&#39;func:nextavailableip:10.10.10.0/24&#39;</span><span class="p">}</span>
+<span class="p">)</span>
 <span class="nb">New-IBObject</span> <span class="n">-ObjectType</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-IBObject</span> <span class="nv">$newhost</span>
 </code></pre></div>
 <p>To modify an existing object, the easiest way is usually to get a copy of it, modify the copy, and save the result with <code>Set-IBObject</code>. <em>Be wary of objects that return read-only fields. You need to strip them out before saving or an error will be thrown.</em></p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get a copy of the host</span>
 <span class="nv">$myhost</span> <span class="p">=</span> <span class="nb">Get-IBObject</span> <span class="s1">&#39;record:host&#39;</span> <span class="n">-Filter</span> <span class="s1">&#39;name=web1.example.com&#39;</span>
 
-<span class="c"># remove the read-only &#39;host&#39; field from the nested &#39;record:host_ipv4addr&#39; object</span>
-<span class="nv">$myhost</span><span class="p">.</span><span class="n">ipv4addrs</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">PSObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
-
 <span class="c"># Modify the first listed IP address</span>
 <span class="nv">$myhost</span><span class="p">.</span><span class="n">ipv4addrs</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">ipv4addr</span> <span class="p">=</span> <span class="s1">&#39;10.10.10.100&#39;</span>
+
+<span class="c"># remove the read-only &#39;host&#39; field from the nested &#39;record:host_ipv4addr&#39; object</span>
+<span class="nv">$myhost</span><span class="p">.</span><span class="n">ipv4addrs</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">PSObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
 
 <span class="c"># Save the result</span>
 <span class="nv">$myhost</span> <span class="p">|</span> <span class="nb">Set-IBObject</span>
