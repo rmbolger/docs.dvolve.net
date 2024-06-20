@@ -2,112 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/FAQ/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Get-IBConfig/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Get-IBObject/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Get-IBSchema/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Invoke-IBFunction/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Invoke-IBWAPI/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/New-IBObject/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Receive-IBFile/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Remove-IBConfig/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Remove-IBObject/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Send-IBFile/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Set-IBConfig/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Functions/Set-IBObject/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Definitive-REST-Examples/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Development-Notes/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Stateless-Mode/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-Get-IBSchema/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-IBFile-Functions/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/Using-SecretManagement/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dvolve.net/Posh-IBWAPI/v4/Guides/WAPI-to-NIOS-Versions/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
