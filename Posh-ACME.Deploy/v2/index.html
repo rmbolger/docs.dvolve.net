@@ -830,7 +830,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><code>Submit-Renewal</code> only returns a certificate object when it successfully renews the certificate. So you generally run it 1-2 times per day and it doesn't do anything until the renewal window has been reached. The <code>-RemoveOldCert</code> parameter will delete the previous certificate from the Windows certificate store after it successfully imports and configures the new one.</p>
-<p>The rest of the functions in this module work very similarly. Check the associated parameters using <code>Get-Help &lt;function&gt;</code> for details. If you forget which functions are available, you can list them with <code>Get-Command -Module Posh-ACME.Deploy</code>.</p>
+<p>The rest of the functions in this module work very similarly. Check the associated parameters using <code>Get-Help &lt;function&gt;</code> for details. Additional documentation can be found <a href="https://docs.dvolve.net/Posh-ACME.Deploy/">here</a></p>
 <h2 id="requirements-and-platform-support">Requirements and Platform Support<a class="headerlink" href="#requirements-and-platform-support" title="Permanent link">&para;</a></h2>
 <p>All of the currently included functions are tied to Windows services and related modules. Generally, you should have Windows PowerShell 5.1 with .NET Framework 4.7.1 or later which are the same minimum requirements as Posh-ACME.</p>
 <p>PowerShell 7+ support will be dependent on the specific function you're using and whether any dependent modules (WebAdministration, RemoteDesktopServices, etc) are compatible.</p>
