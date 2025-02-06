@@ -657,6 +657,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      -Inheritance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-maxresults" class="md-nav__link">
     <span class="md-ellipsis">
       -MaxResults
@@ -1467,6 +1476,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      -Inheritance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-maxresults" class="md-nav__link">
     <span class="md-ellipsis">
       -MaxResults
@@ -1667,19 +1685,19 @@
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <h3 id="bytype-default">ByType (Default)<a class="headerlink" href="#bytype-default" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="p">[</span><span class="n">-ObjectType</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Filter</span> <span class="p">&lt;</span><span class="n">Object</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-MaxResults</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-PageSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span> <span class="p">[</span><span class="n">-ReturnAll</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span> <span class="p">[</span><span class="n">-ReturnAll</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-Inheritance</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
  <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span>
  <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h3 id="bytypenopaging">ByTypeNoPaging<a class="headerlink" href="#bytypenopaging" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="p">[</span><span class="n">-ObjectType</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Filter</span> <span class="p">&lt;</span><span class="n">Object</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoPaging</span><span class="p">]</span> <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span>
- <span class="p">[</span><span class="n">-ReturnAll</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-ReturnAll</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-Inheritance</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h3 id="byref">ByRef<a class="headerlink" href="#byref" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-IBObject</span> <span class="p">[</span><span class="n">-ObjectRef</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span> <span class="p">[</span><span class="n">-ReturnAll</span><span class="p">]</span> <span class="p">[</span><span class="n">-BatchMode</span><span class="p">]</span>
- <span class="p">[</span><span class="n">-BatchGroupSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-BatchGroupSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ProxySearch</span><span class="p">]</span> <span class="p">[</span><span class="n">-Inheritance</span><span class="p">]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Query a specific object's details by specifying ObjectRef or search for a set of objects using ObjectType and optional Filter arguments.
@@ -1746,6 +1764,18 @@ The result count can be limited with the -MaxResults parameter.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Object</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ByType, ByTypeNoPaging</span>
 <span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Filters</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-inheritance">-Inheritance<a class="headerlink" href="#-inheritance" title="Permanent link">&para;</a></h3>
+<p>If specified, returned fields which support inheritance will display data properly. Requires WAPI 2.10.2+. WARNING: This may change the structure of the field's output.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>

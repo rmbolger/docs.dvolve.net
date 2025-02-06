@@ -1147,7 +1147,10 @@
 <span class="c"># install for current user</span>
 <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">Posh-IBWAPI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </code></pre></div>
-<p><em>NOTE: If you use PowerShell 5.1 or earlier, <code>Install-Module</code> may throw an error depending on your Windows and .NET version due to a change PowerShell Gallery made to their TLS settings. For more info and a workaround, see the <a href="https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/">official blog post</a>.</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use PowerShell 5.1 or earlier, <code>Install-Module</code> may throw an error depending on your Windows and .NET version due to a change PowerShell Gallery made to their TLS settings. For more info and a workaround, see the <a href="https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/">official blog post</a>.</p>
+</div>
 <h2 id="installation-development">Installation (Development)<a class="headerlink" href="#installation-development" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/rmbolger/Posh-IBWAPI/actions"><img alt="Pester Tests badge" src="https://github.com/rmbolger/Posh-IBWAPI/workflows/Pester%20Tests/badge.svg" /></a></p>
 <p>Use the following PowerShell command to install the latest <em>development</em> version from the git <code>main</code> branch. This method assumes a default <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_psmodulepath"><code>PSModulePath</code></a> environment variable and installs to the CurrentUser scope.</p>
