@@ -786,6 +786,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-noswitchprofile" class="md-nav__link">
     <span class="md-ellipsis">
       -NoSwitchProfile
@@ -1251,6 +1260,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-noswitchprofile" class="md-nav__link">
     <span class="md-ellipsis">
       -NoSwitchProfile
@@ -1354,7 +1372,7 @@
 <p>Save connection parameters to a profile to avoid needing to supply them to future functions.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-IBConfig</span> <span class="p">[[</span><span class="n">-ProfileName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-WAPIHost</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[[</span><span class="n">-NewName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoSwitchProfile</span><span class="p">]</span>
+ <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span> <span class="p">[[</span><span class="n">-NewName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoSwitchProfile</span><span class="p">]</span>
  <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
@@ -1394,6 +1412,18 @@
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-nosession">-NoSession<a class="headerlink" href="#-nosession" title="Permanent link">&para;</a></h3>
+<p>When set, disables session use for this profile which causes explicit credentials to be sent with every call. This can decrease performance and cause extra audit logging against the WAPI endpoint, but may be desired in rare cases.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>

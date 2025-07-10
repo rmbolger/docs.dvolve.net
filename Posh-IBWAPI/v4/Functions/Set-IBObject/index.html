@@ -849,6 +849,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-objectref" class="md-nav__link">
     <span class="md-ellipsis">
       -ObjectRef
@@ -1404,6 +1413,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-objectref" class="md-nav__link">
     <span class="md-ellipsis">
       -ObjectRef
@@ -1578,12 +1596,12 @@
 <h3 id="objectonly">ObjectOnly<a class="headerlink" href="#objectonly" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-IBObject</span> <span class="n">-IBObject</span> <span class="p">&lt;</span><span class="n">PSObject</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span> <span class="p">[</span><span class="n">-BatchMode</span><span class="p">]</span>
  <span class="p">[</span><span class="n">-BatchGroupSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h3 id="refandtemplate">RefAndTemplate<a class="headerlink" href="#refandtemplate" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-IBObject</span> <span class="n">-ObjectRef</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="n">-TemplateObject</span> <span class="p">&lt;</span><span class="n">PSObject</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-ReturnField</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-ReturnBase</span><span class="p">]</span>
  <span class="p">[</span><span class="n">-BatchMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-BatchGroupSize</span> <span class="p">&lt;</span><span class="n">Int32</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ProfileName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIHost</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WAPIVersion</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Modify an object by specifying its object reference and a PSObject with the fields to change.</p>
@@ -1651,6 +1669,18 @@
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True (ByValue)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-nosession">-NoSession<a class="headerlink" href="#-nosession" title="Permanent link">&para;</a></h3>
+<p>If set, no sessions will be saved or used for this call.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 <h3 id="-objectref">-ObjectRef<a class="headerlink" href="#-objectref" title="Permanent link">&para;</a></h3>

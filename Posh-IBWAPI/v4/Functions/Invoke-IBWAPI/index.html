@@ -684,6 +684,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outfile" class="md-nav__link">
     <span class="md-ellipsis">
       -OutFile
@@ -1344,6 +1353,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outfile" class="md-nav__link">
     <span class="md-ellipsis">
       -OutFile
@@ -1494,13 +1512,13 @@
 <h3 id="uri-default">Uri (Default)<a class="headerlink" href="#uri-default" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Invoke-IBWAPI</span> <span class="p">[</span><span class="n">-Uri</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">Uri</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Method</span> <span class="p">&lt;</span><span class="n">WebRequestMethod</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Body</span> <span class="p">&lt;</span><span class="n">Object</span><span class="p">&gt;]</span>
  <span class="p">[</span><span class="n">-ContentType</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-OutFile</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SessionVariable</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WebSession</span> <span class="p">&lt;</span><span class="n">WebRequestSession</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h3 id="hostversion">HostVersion<a class="headerlink" href="#hostversion" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Invoke-IBWAPI</span> <span class="p">[</span><span class="n">-WAPIHost</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Query</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Method</span> <span class="p">&lt;</span><span class="n">WebRequestMethod</span><span class="p">&gt;]</span>
  <span class="p">[</span><span class="n">-Credential</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Body</span> <span class="p">&lt;</span><span class="n">Object</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-ContentType</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-OutFile</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[</span><span class="n">-SessionVariable</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WebSession</span> <span class="p">&lt;</span><span class="n">WebRequestSession</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span>
- <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[</span><span class="n">-SessionVariable</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-WebSession</span> <span class="p">&lt;</span><span class="n">WebRequestSession</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span>
+ <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>This function is largely just a wrapper around Invoke-RestMethod that supports trapping and exposing syntax errors with the WAPI and the ability to ignore certificate validation.
@@ -1557,6 +1575,18 @@ It is what all of the *-IBObject functions use under the hood and shouldn't be n
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-nosession">-NoSession<a class="headerlink" href="#-nosession" title="Permanent link">&para;</a></h3>
+<p>If set, session related parameters will be ignored and no sessions will be saved or used for this call.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>

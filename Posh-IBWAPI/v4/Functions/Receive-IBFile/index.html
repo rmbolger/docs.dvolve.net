@@ -702,6 +702,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-objectref" class="md-nav__link">
     <span class="md-ellipsis">
       -ObjectRef
@@ -1269,6 +1278,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-nosession" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoSession
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-objectref" class="md-nav__link">
     <span class="md-ellipsis">
       -ObjectRef
@@ -1391,7 +1409,8 @@
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">Receive-IBFile</span> <span class="p">[</span><span class="n">-FunctionName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-OutFile</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[[</span><span class="n">-FunctionArgs</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&gt;]</span>
  <span class="p">[[</span><span class="n">-ObjectRef</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-OverrideTransferHost</span><span class="p">]</span> <span class="p">[[</span><span class="n">-ProfileName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-WAPIHost</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
- <span class="p">[[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+ <span class="p">[[</span><span class="n">-WAPIVersion</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-Credential</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">PSCredential</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SkipCertificateCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoSession</span><span class="p">]</span>
+ <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>This is a wrapper around the various fileop functions that allow data export from Infoblox.</p>
@@ -1437,6 +1456,18 @@
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-nosession">-NoSession<a class="headerlink" href="#-nosession" title="Permanent link">&para;</a></h3>
+<p>If set, no sessions will be saved or used for this call.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
